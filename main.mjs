@@ -1,3 +1,4 @@
+import { log, clear, table } from "console";
 import { freemem, totalmem } from "os";
 
 setInterval(() => {
@@ -9,7 +10,7 @@ setInterval(() => {
         total: `${total} MB`,
         freePercents: `${percents}%`,
     };
-    console.clear();
-    console.log("Stats");
-    console.table(pc_memory);
+    clear();
+    log("Stats");
+    table(pc_memory);
 }, 1000);
