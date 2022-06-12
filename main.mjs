@@ -1,5 +1,6 @@
 import { log, clear, table } from "console";
 import { freemem, totalmem } from "os";
+import { emitLog } from "./logger.mjs";
 
 setInterval(() => {
     const free = parseInt(freemem() / 1024 / 1024);
@@ -13,4 +14,6 @@ setInterval(() => {
     clear();
     log("Stats");
     table(pc_memory);
+
+    emitLog(`${JSON.stringify(pc_memory)}\n`);
 }, 1000);
